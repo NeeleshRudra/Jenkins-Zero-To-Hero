@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'openjdk:17-alpine' }
+        docker { image 'eclipse-temurin:17-alpine' }
     }
     stages {
         stage('Create Java File') {
