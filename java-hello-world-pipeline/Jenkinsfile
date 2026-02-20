@@ -6,13 +6,11 @@ pipeline {
         stage('Create Java File') {
             steps {
                 sh '''
-                cat <<EOF > Hello.java
-                public class Hello {
-                    public static void main(String[] args) {
-                        System.out.println("Hello from Jenkins Pipeline!");
-                    }
-                }
-                EOF
+                echo "public class Hello {" > Hello.java
+                echo "    public static void main(String[] args) {" >> Hello.java
+                echo "        System.out.println(\\"Hello from Jenkins Pipeline!\\");" >> Hello.java
+                echo "    }" >> Hello.java
+                echo "}" >> Hello.java
                 '''
             }
         }
